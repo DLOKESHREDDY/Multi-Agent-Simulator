@@ -1,0 +1,38 @@
+<!-- protocol-config.component.html -->
+<div class="protocol-config-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Protocol Configuration</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="protocolForm">
+          <mat-form-field>
+            <mat-label>Protocol Name</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+  
+          <mat-form-field>
+            <mat-label>Protocol Type</mat-label>
+            <mat-select formControlName="type">
+              <mat-option value="request-response">Request-Response</mat-option>
+              <mat-option value="broadcast">Broadcast</mat-option>
+              <mat-option value="peer-to-peer">Peer-to-Peer</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <mat-label>Latency (ms)</mat-label>
+            <input matInput type="number" formControlName="latency">
+          </mat-form-field>
+  
+          <mat-form-field>
+            <mat-label>Number of Agents</mat-label>
+            <input matInput type="number" formControlName="agents">
+          </mat-form-field>
+  
+          <button mat-raised-button color="primary" (click)="startSimulation()">Start Simulation</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

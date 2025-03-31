@@ -1,0 +1,26 @@
+<div>
+    <form [formGroup]="protocolForm" (ngSubmit)="startSimulation()">
+      <label for="name">Protocol Name</label>
+      <input id="name" formControlName="name" />
+  
+      <label for="type">Protocol Type</label>
+      <select id="type" formControlName="type">
+        <option value="request-response">Request-Response</option>
+        <option value="publish-subscribe">Publish-Subscribe</option>
+      </select>
+  
+      <label for="latency">Latency</label>
+      <input id="latency" type="number" formControlName="latency" />
+  
+      <label for="agents">Number of Agents</label>
+      <input id="agents" type="number" formControlName="agents" />
+  
+      <button type="submit">Start Simulation</button>
+    </form>
+  </div>
+  
+  <!-- Displaying real-time simulation results -->
+  <div *ngFor="let result of simulationResults">
+    <p>{{ result | json }}</p>
+  </div>
+  
